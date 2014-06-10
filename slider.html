@@ -1,0 +1,144 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<script src="js/jquery-1.10.2.js"></script>
+<!--<script src="js/jquery.cycle2.min.js"></script>-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="http://malsup.github.io/jquery.cycle2.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<script>
+/*$(document).ready(function(){
+
+});*/
+
+$(window).load(function(){
+
+    // Fancybox specific
+    $(".gallery__link").fancybox({
+        'titleShow'     : false,
+        'transitionIn'  : 'elastic',
+        'transitionOut' : 'elastic'
+    });
+
+    // Set general variables
+    // ====================================================================
+    var totalWidth = 0;
+
+    // Total width is calculated by looping through each gallery item and
+    // adding up each width and storing that in `totalWidth`
+    $(".gallery__item").each(function(){
+        totalWidth = totalWidth + $(this).outerWidth(true);
+    });
+
+    // The maxScrollPosition is the furthest point the items should
+    // ever scroll to. We always want the viewport to be full of images.
+    var maxScrollPosition = totalWidth - $(".gallery-wrap").outerWidth();
+
+    // This is the core function that animates to the target item
+    // ====================================================================
+    function toGalleryItem($targetItem){
+        // Make sure the target item exists, otherwise do nothing
+        if($targetItem.length){
+
+            // The new position is just to the left of the targetItem
+            var newPosition = $targetItem.position().left;
+
+            // If the new position isn't greater than the maximum width
+            if(newPosition <= maxScrollPosition){
+
+                // Add active class to the target item
+                $targetItem.addClass("gallery__item--active");
+
+                // Remove the Active class from all other items
+                $targetItem.siblings().removeClass("gallery__item--active");
+
+                // Animate .gallery element to the correct left position.
+                $(".gallery").animate({
+                    left : - newPosition
+                });
+            } else {
+                // Animate .gallery element to the correct left position.
+                $(".gallery").animate({
+                    left : - maxScrollPosition
+                });
+            };
+        };
+    };
+
+    // Basic HTML manipulation
+    // ====================================================================
+    // Set the gallery width to the totalWidth. This allows all items to
+    // be on one line.
+    $(".gallery").width(totalWidth);
+
+    // Add active class to the first gallery item
+    $(".gallery__item:first").addClass("gallery__item--active");
+
+    // When the prev button is clicked
+    // ====================================================================
+    $(".gallery__controls-prev").click(function(){
+        // Set target item to the item before the active item
+        var $targetItem = $(".gallery__item--active").prev();
+        toGalleryItem($targetItem);
+    });
+
+    // When the next button is clicked
+    // ====================================================================
+    $(".gallery__controls-next").click(function(){
+        // Set target item to the item after the active item
+        var $targetItem = $(".gallery__item--active").next();
+        toGalleryItem($targetItem);
+    });
+});
+
+</script>
+	
+
+</HEAD>
+<BODY>
+<p align="center"><img src="images/logo.png" height="50px" width="350px" /></p>	
+
+<div class="content">
+	<div class="gallery-wrap">
+	  <div class="gallery clearfix">
+	    <div class="gallery__item">
+	      <img src="images/pictures/1.png" class="gallery__img" alt="" />
+	    </div>
+	     <div class="gallery__item">
+	      <img src="images/pictures/1.png" class="gallery__img" alt="" />
+	    </div>
+	  </div>
+	  <div class="gallery__controls clearfix">
+	    <div href="#" class="gallery__controls-prev">
+	      <img src="images/prev.png" alt="" />
+	    </div>
+	    <div href="#" class="gallery__controls-next">
+	      <img src="images/next.png" alt="" />
+	    </div>
+	  </div>
+	</div>
+
+	<div id="ranking"></div>
+
+	<div id="message">
+		As 3 fotos mais votadas <br />
+		ganham um café!
+	</div>
+
+	<div id="link">
+	wwww.lia.dc.ufscar.br/selfiecafe
+	<img src="images/qrcode.png" width="70px" height="70px">
+	</div>
+
+</div>
+
+
+
+</BODY>
+
+</HTML>
