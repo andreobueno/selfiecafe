@@ -59,6 +59,14 @@ width: 100%;
 }
 
 
+#description{
+	text-align: center;
+	background-color: white;
+	border-radius:10px;
+}
+
+
+
 /*************** SLIDER ********************/
 
 
