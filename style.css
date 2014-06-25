@@ -67,6 +67,46 @@ width: 100%;
 
 
 
+/*********BUTTON**********/
+
+.tirarFoto_btn {
+   border-top: 1px solid #f7bc97;
+   background: #c96d34;
+   background: -webkit-gradient(linear, left top, left bottom, from(#b55c28), to(#c96d34));
+   background: -webkit-linear-gradient(top, #b55c28, #c96d34);
+   background: -moz-linear-gradient(top, #b55c28, #c96d34);
+   background: -ms-linear-gradient(top, #b55c28, #c96d34);
+   background: -o-linear-gradient(top, #b55c28, #c96d34);
+   padding: 12.5px 25px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 19px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.tirarFoto_btn :hover {
+   border-top-color: #9c4611;
+   background: #9c4611;
+   color: #c9c9c9;
+   }
+.tirarFoto_btn :active {
+   border-top-color: #612715;
+   background: #612715;
+   }
+
+/************************/
+
+
+
+
+
 /*************** SLIDER ********************/
 
 

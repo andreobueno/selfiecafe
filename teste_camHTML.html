@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#">
+<head>	<title>Selfie Cafe</title>
+	<meta name="description" content="Access the desktop camera and video using HTML, JavaScript, and Canvas.  The camera may be controlled using HTML5 and getUserMedia." />
+	<link rel="stylesheet" type="text/css" href="/wp-content/themes/london/style.css" media="all"><link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"><link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><!--[if IE]><meta http-equiv="imagetoolbar" content="no"><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script><![endif]--><style>
+.demo-frame header {
+	display: none;
+}
+
+.demo-wrapper {
+	min-height: 500px;
+}
+
+.bsap_1280449 {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+</style>	
+<style>
+		video { border: 1px solid #ccc; display: block; margin: 0 0 20px 0; }
+		#canvas { margin-top: 20px; border: 1px solid #ccc; display: block; }
+</style>
+</head>
+<body>
+
+<!-- content wrapper --><div class="main"><div class="center clear"><!-- main content column --><main id="main"><!--CONTENT-->
+<div class="demo-wrapper">
+
+<br />
+<p align="center"><img src="images/logo_SelfieCafe.png" height="100px" width="350px" /></p>	
+
+
+<div id="promoNode"></div>	
+
+
+	<!--
+		Ideally these elements aren't created until it's confirmed that the 
+		client supports video/camera, but for the sake of illustrating the 
+		elements involved, they are created with markup (not JavaScript)
+	-->
+	<video id="video" width="640" height="480" autoplay></video>
+	<button id="snap" class="sexyButton">Snap Photo</button>
+	<canvas id="canvas" width="640" height="480"></canvas>
+
+	<script>
+
+		// Put event listeners into place
+		window.addEventListener("DOMContentLoaded", function() {
+			// Grab elements, create settings, etc.
+			var canvas = document.getElementById("canvas"),
+				context = canvas.getContext("2d"),
+				video = document.getElementById("video"),
+				videoObj = { "video": true },
+				errBack = function(error) {
+					console.log("Video capture error: ", error.code); 
+				};
+
+			// Put video listeners into place
+			if(navigator.getUserMedia) { // Standard
+				navigator.getUserMedia(videoObj, function(stream) {
+					video.src = stream;
+					video.play();
+				}, errBack);
+			} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+				navigator.webkitGetUserMedia(videoObj, function(stream){
+					video.src = window.webkitURL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			} else if(navigator.mozGetUserMedia) { // WebKit-prefixed
+				navigator.mozGetUserMedia(videoObj, function(stream){
+					video.src = window.URL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			}
+
+			// Trigger photo take
+			document.getElementById("snap").addEventListener("click", function() {
+				context.drawImage(video, 0, 0, 640, 480);
+			});
+		}, false);
+
+	</script>
+		
+</div>
+
+
+</main>
+
+	<style>
+		body .one .bsa_it_ad { background: #f8f8f8; border: none; font-family: inherit; width: 200px; position: absolute; top: 0; right: 0; text-align: center; border-radius: 8px; }
+		body .one .bsa_it_ad .bsa_it_i { display: block; padding: 0; float: none; margin: 0 0 5px; }
+		body .one .bsa_it_ad .bsa_it_i img { padding: 10px; border: none; margin: 0 auto; }
+		body .one .bsa_it_ad .bsa_it_t { padding: 6px 0; }
+		body .one .bsa_it_ad .bsa_it_d { padding: 0; font-size: 12px; color: #333; }
+		body .one .bsa_it_p { display: none; }
+		body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; margin: 12px 15px 0; text-align: right; }
+	</style>
+	<script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1280449&zoneid=1386&key=db3b221ddd8cbba67739ae3837520ffe&serve=C6SD52Y&placement=davidwalshname&circle=dev" id="_adpacks_js"></script>
+
+
+<script>
+window.addEventListener('load', function() {
+	var s = 'script';
+	var d = document;
+	var w = window;
+	var firstScript = d.getElementsByTagName(s)[0];
+
+	// Get the first paragraph
+	var first_paragraph = document.getElementsByTagName('p')[0];
+	if(first_paragraph) {
+		first_paragraph.className = 'demo-intro';
+	}
+
+	// BSA bitches!
+	var bsa = d.createElement(s);
+	bsa.async = 1;
+	bsa.src = '//s3.buysellads.com/ac/bsa.js';
+	firstScript.parentNode.insertBefore(bsa, firstScript);
+
+	// Promo!
+	(function() {
+
+		var promoNode = d.getElementById('promoNode');
+
+		// Temporary - use MooTools 2.0 when available
+		function createElement(tagName, attr, parent) {
+			var el = d.createElement(tagName);
+			for(prop in attr) {
+				if(attr.hasOwnProperty(prop)) el.setAttribute(prop, attr[prop]);
+			}
+			parent.appendChild(el);
+			return el;
+		}
+
+		// Loads a script
+		function loadScript(url) {
+			var script = d.createElement('script');
+			script.src = url;
+			script.setAttribute('async', 'true');
+			d.documentElement.firstChild.appendChild(script);
+		}
+
+	})();
+});
+</script>
+</body>
+</html>
