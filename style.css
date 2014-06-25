@@ -67,46 +67,6 @@ width: 100%;
 
 
 
-/*********BUTTON**********/
-
-.tirarFoto_btn {
-   border-top: 1px solid #f7bc97;
-   background: #c96d34;
-   background: -webkit-gradient(linear, left top, left bottom, from(#b55c28), to(#c96d34));
-   background: -webkit-linear-gradient(top, #b55c28, #c96d34);
-   background: -moz-linear-gradient(top, #b55c28, #c96d34);
-   background: -ms-linear-gradient(top, #b55c28, #c96d34);
-   background: -o-linear-gradient(top, #b55c28, #c96d34);
-   padding: 12.5px 25px;
-   -webkit-border-radius: 15px;
-   -moz-border-radius: 15px;
-   border-radius: 15px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 19px;
-   font-family: Georgia, Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.tirarFoto_btn :hover {
-   border-top-color: #9c4611;
-   background: #9c4611;
-   color: #c9c9c9;
-   }
-.tirarFoto_btn :active {
-   border-top-color: #612715;
-   background: #612715;
-   }
-
-/************************/
-
-
-
-
-
 /*************** SLIDER ********************/
 
 
@@ -131,3 +91,113 @@ h2 {display:inline;}
     border: dashed 1px #BCBCCB; padding:8px 12px; background-color: #F3F3F9; white-space:pre; font-family:"Courier New", Georgia;
     font-size:12px; margin:6px 0;overflow:auto; 
 }
+
+/****************************************************/
+
+
+
+/*************** CAM ********************/
+
+.tirarFoto_btn {
+   border-top: 1px solid #f7bc97;
+   background: #c96d34;
+   background: -webkit-gradient(linear, left top, left bottom, from(#b55c28), to(#c96d34));
+   background: -webkit-linear-gradient(top, #b55c28, #c96d34);
+   background: -moz-linear-gradient(top, #b55c28, #c96d34);
+   background: -ms-linear-gradient(top, #b55c28, #c96d34);
+   background: -o-linear-gradient(top, #b55c28, #c96d34);
+   padding: 12.5px 25px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 19px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+
+#tirarFoto{
+    border-radius: 10px;
+    padding: 2px;
+    text-align: center;
+    width: 600px;
+    height: 240px;
+    position: relative;
+    background-color: #FFF2DF;
+    opacity: 0.8;
+    margin-left: auto;
+    margin-right: auto;
+    top: 230px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-size: 30px;
+    color: #3B2D16;
+}
+
+#main {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left:0;
+  right:0;
+
+}
+
+.tirarFoto_btn :hover {
+   border-top-color: #9c4611;
+   background: #9c4611;
+   color: #c9c9c9;
+}
+
+.tirarFoto_btn :active {
+   border-top-color: #612715;
+   background: #612715;
+}
+
+video { 
+  border: 1px solid #ccc; 
+  display: block; 
+  margin: 0 0 20px 0; 
+}
+
+#canvas { 
+  margin-top: -555px; 
+  border: 1px solid #ccc; 
+  display: block; 
+}
+
+.demo-frame header {
+  display: none;
+}
+
+.demo-wrapper {
+  min-height: 500px;
+}
+
+.bsap_1280449 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#coverVideo{
+  width: 640px;
+  height: 480px;
+  display: block; 
+  margin: 0 0 20px 0; 
+  position: relative;
+  background: black;
+}
+
+/*************************************/
+
+
+
+
+
+
+
