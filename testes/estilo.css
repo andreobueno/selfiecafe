@@ -1,0 +1,19 @@
+#message {
+    border-radius: 10px;
+    margin: auto;
+    padding: 2px;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #b0c4de;
+    opacity: 0.8;
+
+}
+
+#content{
+	position: relative;
+
+}

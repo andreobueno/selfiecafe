@@ -1,0 +1,47 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+
+  $("#hide").click(function(){
+	$("#message").hide();
+
+  });
+
+  $("#show").click(function(){
+     $("#message").show();
+
+  });
+
+  $("#btn").click(function(){
+  	$("#message").hide();
+
+
+  });
+
+});
+</script>
+</head>
+
+<body>
+<div id="content">
+	<p>If you click on the "Hide" button, I will disappear.</p>
+	<button id="hide">Hide</button>
+	<button id="show">Show</button>
+</div>
+
+<div id="message">
+Aguarde! Em Julho você poderá ver todas as fotos e votar nas que mais gostar.
+<br />
+<button type="button" id="btn">Click Me!</button>
+
+</div>
+
+
+</body>
+
+</html>
